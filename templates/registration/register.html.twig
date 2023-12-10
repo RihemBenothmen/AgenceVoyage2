@@ -1,0 +1,85 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block section %}
+    <div class="container-fluid bg-primary py-5 mb-5 hero-header">
+            <div class="container py-5">
+                <div class="row justify-content-center py-5">
+                    <div class="col-lg-10 pt-lg-5 mt-lg-5 text-center">
+                        <h1 class="display-3 text-white animated slideInDown">Registration Form</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb justify-content-center">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item text-white active" aria-current="page">Register</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+   <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="booking p-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-md-6 text-white">
+                        <p class="mb-4">Welcome to our travel community! Create an account to unlock exclusive deals and personalized travel experiences just for you.</p>
+                    </div>
+                    <div class="col-md-6">
+                        <h1 class="text-white mb-4">Register</h1>
+                             <div class="row g-3">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+    {{ form_errors(registrationForm) }}
+
+    {{ form_start(registrationForm) }}
+       {{ form_row(registrationForm.nom,{
+            'attr': {'class': 'form-control bg-transparent'}
+        }) }}
+                           </div>
+                        </div> 
+         <div class="col-md-6">
+              <div class="form-floating">
+      {{ form_row(registrationForm.prenom,{
+            'attr': {'class': 'form-control bg-transparent'}
+        }) }}
+                                   </div>
+                        </div> 
+         <div class="col-md-6">
+              <div class="form-floating">
+    {{ form_row(registrationForm.telephone,{
+            'attr': {'class': 'form-control bg-transparent'}
+        }) }}
+                                   </div>
+                        </div> 
+         <div class="col-md-6">
+              <div class="form-floating">
+        {{ form_row(registrationForm.email,{
+            'attr': {'class': 'form-control bg-transparent'}
+        }) }}
+                                   </div>
+                        </div> 
+         <div class="col-md-6">
+              <div class="form-floating">
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password',
+            'attr': {'class': 'form-control bg-transparent'}
+        }) }}
+        </div></div>
+        <br>
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn btn-outline-light w-100 py-3">Register</button>
+    {{ form_end(registrationForm) }}
+                                     </div>
+                                 </div>
+                             </div>
+                     </div>
+                 </div>
+       </div>
+   </div>
+ </div>
+
+</div>
+{% endblock %}

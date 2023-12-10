@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+
+{% block section %}
+<div style="background-color: #427D9D; width: 100%; height: 100px; "></div>
+
+<div style="display: flex; align-items: center; justify-content: center; height: 50vh;">
+ <div class="col-lg-4 wow fadeInUp" data-wow-delay="0.5s">
+    <p style="text-align: center; font-weight: bold;">Votre réservation a été enregistrée avec succès.</p>
+ <h1 style="text-align: center;"> </h1>
+ <br>
+                    <form method="post">
+                        <div class="row g-3">
+                            <div class="">
+                                <div class="form-floating">
+
+ 
+    <p>ID de réservation : {{ reservation.id }}</p>
+    <p> votre nom : {{ reservation.nom }}<p>
+    <p> nombre des adultes : {{ reservation.adulte }}<p>
+    <p> nombre des enfants : {{ reservation.enfant }}<p>
+
+    {% set tripStartDate = reservation.date %}
+    {% set tripEndDate = reservation.date|date_modify('+2 days') %}
+    <p style="font-weight: bold;"> date de votre voyage : Du {{ reservation.date | date('Y-m-d') }} jusqu'a {{ tripEndDate|date('Y-m-d') }}</p>
+    <hr>
+    <p> Montant total : {{ reservation.montant }} DT<p>
+    <!-- Affichez d'autres détails de la réservation selon votre modèle -->
+
+    </div>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}

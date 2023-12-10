@@ -1,0 +1,48 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}users{% endblock %}
+{% block section %}
+    <h1 style="text-align:center">Les utilisateurs</h1>
+<div class="tab-content" id="orders-table-tab-content">
+			        <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+					    <div class="app-card app-card-orders-table shadow-sm mb-5">
+						    <div class="app-card-body">
+							    <div class="table-responsive">
+							        <table class="table app-table-hover mb-0 text-left">
+										<thead>
+											<tr>
+                <th class="cell">Id</th>
+                <th class="cell">Email</th>
+                <th class="cell">Nom</th>
+                <th class="cell">Prenom</th>
+                <th class="cell">Telephone</th>
+                <th class="cell">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+        	 {% if  user.nom != "admin" %}
+            <tr>
+                <td class="cell">{{ user.id }}</td>
+                <td class="cell">{{ user.email }}</td>
+                <td class="cell">{{ user.nom }}</td>
+                <td class="cell">{{ user.prenom }}</td>
+                <td class="cell">{{ user.telephone }}</td>
+                <td class="cell">
+                    <a class="badge bg-success" href="{{ path('app_user_show', {'id': user.id}) }}">show</a>
+                    <a class="badge bg-warning" href="{{ path('app_user_edit', {'id': user.id}) }}">edit</a>
+                </td>
+            </tr>
+              {% endif %}
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+    <a href="{{ path('app_user_new') }}">Create new</a>
+{% endblock %}

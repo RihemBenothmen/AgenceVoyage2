@@ -1,0 +1,54 @@
+{% extends 'admin.html.twig' %}
+
+{% block title %}Reservation index{% endblock %}
+
+{% block section %}
+    <h1 style="text-align:center">Les reservations</h1>
+
+ <div class="tab-content" id="orders-table-tab-content">
+			        <div class="tab-pane fade show active" id="orders-all" role="tabpanel" aria-labelledby="orders-all-tab">
+					    <div class="app-card app-card-orders-table shadow-sm mb-5">
+						    <div class="app-card-body">
+							    <div class="table-responsive">
+							        <table class="table app-table-hover mb-0 text-left">
+										<thead>
+											<tr>
+                <th class="cell">Id</th>
+                <th class="cell">Date</th>
+                <th class="cell">Adulte</th>
+                <th class="cell">Enfant</th>
+                <th class="cell">Nom</th>
+                <th class="cell">Email</th>
+                <th class="cell">Telephone</th>
+                <th class="cell">Montant</th>
+                <th class="cell">actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for reservation in reservations %}
+            <tr>
+                <td class="cell">{{ reservation.id }}</td>
+                <td class="cell">{{ reservation.date | date('Y-m-d')}}</td>
+                <td class="cell">{{ reservation.adulte }}</td>
+                <td class="cell">{{ reservation.enfant }}</td>
+                <td class="cell">{{ reservation.nom }}</td>
+                <td class="cell">{{ reservation.email }}</td>
+                <td class="cell">{{ reservation.telephone }}</td>
+                <td class="cell">{{ reservation.montant}}</td>
+                <td class="cell">
+                    <a class="badge bg-success" href="{{ path('app_reservation_show', {'id': reservation.id}) }}">show</a>
+                    <a class="badge bg-warning" href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+</div>
+</div>
+    <a href="{{ path('app_reservation_new') }}">Create new</a>
+{% endblock %}
