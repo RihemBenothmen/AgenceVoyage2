@@ -53,8 +53,8 @@
                     <div class="service-item rounded pt-3">
                         <div class="p-4">
                             <i class="fa fa-3x fa-globe text-primary mb-4"></i>
-                            <h5>WorldWide Tours</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <h5>Tunisia Tours</h5>
+                            <p>Explorez les trésors de la Tunisie à travers nos circuits exceptionnels, conçus pour vous offrir une expérience inoubliable.</p>
                         </div>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-hotel text-primary mb-4"></i>
                             <h5>Hotel Reservation</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <p>Sécurisez votre séjour en Tunisie en toute simplicité avec nos réservations d'hôtel. Détendez-vous, nous nous occupons de tout.</p>
                         </div>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-user text-primary mb-4"></i>
                             <h5>Travel Guides</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <p>Parcourez la Tunisie en toute confiance avec nos guides de voyage experts. Des conseils locaux pour une aventure sans tracas.</p>
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                         <div class="p-4">
                             <i class="fa fa-3x fa-cog text-primary mb-4"></i>
                             <h5>Event Management</h5>
-                            <p>Diam elitr kasd sed at elitr sed ipsum justo dolor sed clita amet diam</p>
+                            <p>De la planification à la réalisation, confiez-nous la gestion de votre événement en Tunisie. Créons ensemble des moments mémorables à chaque occasion.</p>
                         </div>
                     </div>
                 </div>
@@ -188,8 +188,9 @@
                     <div class="col-md-6 text-white">
                         <h6 class="text-white text-uppercase">Booking</h6>
                         <h1 class="text-white mb-4">Online Booking</h1>
+                        {% if app.user is null %}
                         <p class="mb-4"><a href="{{ path('app_login') }}"> Connectez-vous </a> pour réserver en utilisant vos informations déjà enregistrées ou <a href="{{ path('app_register') }}"> inscrivez-vous </a>pour gérer vos réservations où que vous soyez !</p>
-
+                        {% endif %}
                     </div>
                     <div class="col-md-6">
                         <h1 class="text-white mb-4">Book A Tour</h1>

@@ -110,9 +110,8 @@
             <tr>
                 <th class="meta  stat-cell">ID</th>
                 <th class="meta  stat-cell">DATE</th>
-                <th class="meta  stat-cell">ADULTE</th>
-                <th class="meta  stat-cell">ENFANT</th>
                 <th class="meta  stat-cell">VOYAGE</th>
+                <th class="meta  stat-cell">Montant</th>
                 <th class="meta  stat-cell">ACTIONS</th>
 
             </tr>
@@ -122,9 +121,8 @@
             <tr>
                 <td class="meta  stat-cell">{{ reservation.id }}</td>
                 <td class="meta  stat-cell">{{ reservation.date | date('Y-m-d') }}</td>
-                <td class="meta  stat-cell">{{ reservation.adulte }}</td>
-                <td class="meta  stat-cell">{{ reservation.enfant }}</td>
 				<td class="meta  stat-cell">{{ reservation.voyage.titre }}</td>
+				<td class="meta  stat-cell">{{ reservation.montant }}</td>
                 <td>
                     <a class="badge bg-success" href="{{ path('app_reservation_show', {'id': reservation.id}) }}">show</a>
                     <a class="badge bg-warning" href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">edit</a>
